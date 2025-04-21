@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xtar Pairing Code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #ff416c, #ff4b2b, #1e90ff, #00ff87);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logo-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .powered-by {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 0 5px;
+      background: linear-gradient(to right, #fff, #0ff, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px #000;
+    }
+
+    .typing-effect {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #00ffc8;
+      animation: glow 2s ease-in-out infinite alternate;
+      min-height: 20px;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ffc8; }
+      to { text-shadow: 0 0 20px #00ffc8; }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.65);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #00ff87;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .btn:hover {
+      background: #1e90ff;
+      color: white;
+    }
+
+    .code {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 8px;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #eee;
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      border-radius: 12px;
+      line-height: 1.7;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .footer span {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
+    #play-audio {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00ffcc;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffcc;
+      animation: pulse 1.5s infinite;
+      z-index: 9999;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(0, 255, 204, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://files.catbox.moe/uhnroz.jpeg" class="logo-img" alt="Xason Logo" />
+  <div class="powered-by">Powered by Manasseh Amoako</div>
+  <div class="typing-effect" id="typing"></div>
+
+  <div class="container">
+    <h2>Xtar Pairing Code</h2>
+    <p class="subtitle">Enter your number to get your WhatsApp pairing code</p>
+    <input type="tel" id="number" placeholder="e.g. +447123456789" />
+    <button class="btn" id="submit">Get Code</button>
+    <div id="pair" class="code" style="display:none;"></div>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div class="footer">
+    Acknowledgments:<br>
+    <span>Mr. Thomas Boadu Appiah</span> (Our lovely)<br>
+    <span>Gloria Kusi</span> (My best Mother)<br>
+    <span>Sahil Khan</span><br>
+    <span>Big Sly</span><br>
+    <span>Savage</span>
+  </div>
+
+  <audio id="bg-music" src="https://files.catbox.moe/e5okau.m4a" loop></audio>
+  <button id="play-audio">Play Music</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+  <script>
+    const btn = document.getElementById('submit');
+    const number = document.getElementById('number');
+    const statusEl = document.getElementById('status');
+    const codeEl = document.getElementById('pair');
+
+    btn.onclick = async () => {
+      const phone = number.value.trim().replace(/[^0-9+]/g, '');
+      if (!phone || phone.length < 10) {
+        statusEl.innerText = "Please enter a valid phone number.";
+        return;
+      }
+
+      statusEl.innerText = "Generating code...";
+      codeEl.style.display = "none";
+
+      try {
+        const res = await axios.get(`http://localhost:4000/code?number=${phone}`);
+        const code = res.data.code;
+        codeEl.innerText = code;
+        codeEl.style.display = "block";
+        statusEl.innerText = "Code generated successfully!";
+      } catch (err) {
+        console.error(err);
+        statusEl.innerText = "Failed to fetch code. Try again later.";
+      }
+    };
+
+    // Click to copy code
+    codeEl.onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(codeEl.innerText);
+        const original = codeEl.innerText;
+        codeEl.innerText = "Copied!";
+        setTimeout(() => codeEl.innerText = original, 2000);
+      } catch (err) {
+        console.error("Copy failed", err);
+      }
+    };
+
+    // Typing Effect
+    const typingText = "Welcome to the future of WhatsApp Bots...";
+    const typingDiv = document.getElementById("typing");
+    let i = 0;
+    function type() {
+      if (i < typingText.length) {
+        typingDiv.innerHTML += typingText.charAt(i);
+        i++;
+        setTimeout(type, 70);
+      }
+    }
+    type();
+
+    // Play music
+    const playBtn = document.getElementById("play-audio");
+    const music = document.getElementById("bg-music");
+    playBtn.addEventListener("click", () => {
+      music.play().then(() => {
+        playBtn.style.display = "none";
+      }).catch(err => {
+        alert("Playback failed. Tap again.");
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>

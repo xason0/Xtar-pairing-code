@@ -1,0 +1,113 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+body {
+  background: linear-gradient(-45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00aa);
+  background-size: 300% 300%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  z-index: 1;
+  padding: 20px;
+}
+
+.rainbow-text {
+  font-size: 2.5em;
+  font-weight: bold;
+  animation: rainbow 5s linear infinite;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% }
+  100% { background-position: 100% }
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid cyan;
+  margin: 10px auto;
+  padding: 12px 25px;
+  text-decoration: none;
+  color: cyan;
+  font-size: 1.2em;
+  width: fit-content;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.author {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+
+
+.social-media {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.4s ease;
+  border: 2px solid transparent;
+  background-color: #222;
+  box-shadow: 0 0 10px #444;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #0ff;
+}
+
+/* Optional per-platform colors */
+.whatsapp { background-color: #25D366; }
+.snapchat { background-color: #FFFC00; color: black; }
+.tiktok   { background-color: #010101; }
+.facebook { background-color: #3b5998; }
+.github   { background-color: #24292e; }
